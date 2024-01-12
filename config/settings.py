@@ -41,8 +41,7 @@ LOCAL_APPS = [
 
 
 THIRD_PARTY_APPS = [
-    # 'webpack_boilerplate',
-    # 'django_extensions',
+    'django_extensions',
 ]
 
 

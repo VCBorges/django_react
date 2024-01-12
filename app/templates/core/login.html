@@ -1,5 +1,12 @@
 {% extends 'core/_base.html' %}
+{% load static %}
 
 {% block content %}
-<h1>hello</h1>
+<div id="root"></div>
+<div id="react-root"><h2>Hello from React!</h2></div>
+<div id="react-root2"><button>Clicked 0 times</button></div>
 {% endblock content %}
+
+{% block js %}
+<script src="{% static 'bundles/index-bundle.js' %}"></script>
+{% endblock js %}
