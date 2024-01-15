@@ -10,9 +10,9 @@ from django.utils.translation import gettext_lazy as _
 from django.views.decorators.csrf import csrf_exempt
 from rich import print
 
-from .exceptions import ProcessingError
-from .forms import BaseForm
-from .utils.forms import get_form_errors
+from ..exceptions import ProcessingError
+from ..forms import BaseForm
+from ..utils.forms import get_form_errors
 
 T = TypeVar('T', bound=BaseForm)
 

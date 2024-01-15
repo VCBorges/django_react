@@ -3,8 +3,9 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, View
 
-from ..core import viewsmixins as mixins
 from config.settings import LOGIN_REDIRECT_URL
+
+from ..core import viewsmixins as mixins
 
 
 class BaseFormView(

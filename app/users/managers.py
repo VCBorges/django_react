@@ -3,8 +3,8 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from django.contrib.auth.base_user import BaseUserManager
-from django.utils.translation import gettext_lazy as _
 from django.forms import ValidationError
+from django.utils.translation import gettext_lazy as _
 
 if TYPE_CHECKING:
     from .models import Users

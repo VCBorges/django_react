@@ -2,8 +2,6 @@ from typing import TypeVar
 
 from django.forms import Form
 
-from rich import print
-
 T = TypeVar('T', bound=Form)
 
 
