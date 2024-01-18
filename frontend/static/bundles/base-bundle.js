@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/entrys/base.js":
-/*!****************************!*\
-  !*** ./src/entrys/base.js ***!
-  \****************************/
+/***/ "./frontend/static/entrys/base.js":
+/*!****************************************!*\
+  !*** ./frontend/static/entrys/base.js ***!
+  \****************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\nconsole;\n\n//# sourceURL=webpack://django-react/./src/entrys/base.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconsole;\n\n//# sourceURL=webpack://django-react/./frontend/static/entrys/base.js?");
 
 /***/ })
 
@@ -43,7 +43,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconsole;\n\n//# sourceURL=web
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/entrys/base.js"](0, __webpack_exports__, __webpack_require__);
+/******/ 	__webpack_modules__["./frontend/static/entrys/base.js"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;

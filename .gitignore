@@ -2,3 +2,4 @@
 node_modules/
 .pytest_cache/
 .ruff_cache/
+__pycache__/

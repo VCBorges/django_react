@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/entrys/landing.js":
-/*!*******************************!*\
-  !*** ./src/entrys/landing.js ***!
-  \*******************************/
+/***/ "./frontend/static/entrys/landing.js":
+/*!*******************************************!*\
+  !*** ./frontend/static/entrys/landing.js ***!
+  \*******************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://django-react/./src/entrys/landing.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://django-react/./frontend/static/entrys/landing.js?");
 
 /***/ })
 
@@ -43,7 +43,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n\n\n//# sourceURL=webpack://d
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/entrys/landing.js"](0, __webpack_exports__, __webpack_require__);
+/******/ 	__webpack_modules__["./frontend/static/entrys/landing.js"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;
