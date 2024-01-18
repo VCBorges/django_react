@@ -20,13 +20,13 @@ const entry = entryFiles.reduce((entries, filename) => {
 // console.log(`__filename: ${__webpackFile}`);
 // console.log(`entrysDir: ${entrysDir}`);
 // console.log(`entryFiles: ${entryFiles}`);
-// console.log(entry);
+console.log(entry);
 
 export default {
   entry: entry,
   output: {
     filename: '[name]-bundle.js',  // output bundle file name
-    path: path.resolve(basedir, './static/bundles/'),  // path to our Django static directory
+    path: path.resolve(basedir, './frontend/static/bundles/'),  // path to our Django static directory
   },
   module: {
       rules: [
