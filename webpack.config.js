@@ -5,7 +5,7 @@ import fs from 'fs';
 
 const webpackFile = fileURLToPath(import.meta.url);
 const basedir = dirname(webpackFile);
-const entrysDir = path.resolve(basedir, './static/entrys/');
+const entrysDir = path.resolve(basedir, './frontend/static/entrys/');
 const entryFiles = fs.readdirSync(entrysDir);
 
 const entry = entryFiles.reduce((entries, filename) => {
