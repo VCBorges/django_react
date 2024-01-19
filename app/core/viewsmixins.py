@@ -118,6 +118,7 @@ class BaseFormViewMixin:
     def post(self, request: HttpRequest, *args, **kwargs) -> JsonResponse:
         self.request = request
         self.data = self.get_body_data(request)
+        print(f'{self.data = }')
         try:
             form: T = self.get_form()
             if form.is_valid():

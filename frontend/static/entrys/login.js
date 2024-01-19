@@ -1,44 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
 
-// function MyApp() {
-//     return (
-//         <div>
-//             <h1>Welcome to my app</h1>
-//         </div>
-//     );
-// }
-// // Comment
-// function MyButton() {
-//     const [count, setCount] = useState(0);
-  
-//     function handleClick() {
-//       setCount(count + 1);
-//     }
-  
-//     return (
-//       <button onClick={handleClick}>Clicked {count} times</button>
-//     );
-// }
-
-
-// function MyComponent({name, age, children}){
-//     return ( 
-//         <h2>
-//             Hello from React!, {name} {age} {children}
-//         </h2>
-//     );
-// }
-
-// const root = createRoot(document.getElementById('root'));
-// root.render(<MyComponent name={'Vinicius'} age={25} children={5} />);
-// console.log(root);
-
-
-
-
-function InputField({ label, type, name, value, onChange }) {
+function BaseInput({ label, type, name, value, onChange }) {
     return (
         <div className="input-field">
             <label htmlFor={name}>{label}</label>
@@ -53,32 +17,52 @@ function SubmitButton() {
 }
 
 function LoginForm() {
-    const [formData, setFormData] = useState({ username: '', password: '' });
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        if (name === 'username') {
+            setEmail(value);
+        } else if (name === 'password') {
+            setPassword(value);
+        }
+        
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission here
-        console.log(formData);
+        console.log(`Email: ${email}, Password: ${password}`)
+        fetch('http://127.0.0.1:8000/users/api/login/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken'),
+            },
+            body: JSON.stringify({ username: email, password }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((err) => console.log(err));
+        
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            <InputField
-                label="Username"
+            <BaseInput
+                label="Email"
                 type="text"
                 name="username"
-                value={formData.username}
+                value={email}
                 onChange={handleChange}
             />
-            <InputField
+            <BaseInput
                 label="Password"
                 type="password"
                 name="password"
-                value={formData.password}
+                value={password}
                 onChange={handleChange}
             />
             <SubmitButton />

@@ -59,7 +59,7 @@ INSTALLED_APPS = LOCAL_APPS + THIRD_PARTY_APPS + DJANGO_APPS
 
 AUTH_USER_MODEL = 'users.Users'
 
-MIDDLEWARE = [
+DJANGO_MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -68,6 +68,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+LOCAL_MIDDLEWARE = [
+    'app.core.middlewares.NoCacheStaticFilesMiddleware'
+]
+
+MIDDLEWARE = LOCAL_MIDDLEWARE + DJANGO_MIDDLEWARE
 
 ROOT_URLCONF = 'config.urls'
 

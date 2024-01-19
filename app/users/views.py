@@ -19,6 +19,10 @@ class LoginTemplateView(LoggedOutTemplateView):
     template_name = 'core/login.html'
 
 
+class LogoutView(BaseLogoutView):
+    next_page = reverse_lazy('login_template')
+    
+
 class LoginView(
     LoggedOutFormView,
     BaseLoginView,
@@ -50,9 +54,7 @@ class LoginView(
             raise ValidationError('Internal error.')
         login(self.request, form.get_user())
         return {
-            'redirect_url': reverse('license_template'),
+            'redirect_url': reverse(),
         }
 
 
-class LogoutView(BaseLogoutView):
-    next_page = reverse_lazy('login_template')
