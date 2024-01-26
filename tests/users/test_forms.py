@@ -3,6 +3,7 @@ import pytest
 from app.users import forms
 from app.users.models import Users
 
+
 @pytest.mark.django_db
 def test_user_registration_form_succsess():
     form = forms.UserRegistrationForm(
@@ -15,13 +16,10 @@ def test_user_registration_form_succsess():
     assert form.is_valid() is True
     data = form.save()
     assert data['next_url'] == reverse('login_template')
-    user = Users.objects.get(
-        email='test3@test.com'
-    )
+    user = Users.objects.get(email='test3@test.com')
     assert user.email == 'test3@test.com'
-    
-    
-    
+
+
 @pytest.mark.django_db
 def test_user_registration_form_fail():
     form = forms.UserRegistrationForm(

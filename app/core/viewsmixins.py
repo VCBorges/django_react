@@ -28,8 +28,8 @@ class BaseContextTemplateViewMixin:
 
 class BaseFormViewMixin:
     form_class: type[T] = None
-    form_valid_message: str = None
-    form_invalid_message: str = None
+    valid_form_message: str = None
+    invalid_form_message: str = None
     server_error_message: str = _(
         'There was an error processing your request. Please try again later.'
     )
@@ -87,7 +87,7 @@ class BaseFormViewMixin:
             data = self.form_processing(form)
             response = self.get_response(
                 status_code=200,
-                message=self.form_valid_message,
+                message=self.valid_form_message,
                 data=data if self.has_return_data else None,
             )
             return response
@@ -97,7 +97,7 @@ class BaseFormViewMixin:
             errors = get_form_errors(form)
             response = self.get_response(
                 status_code=400,
-                message=self.form_invalid_message,
+                message=self.invalid_form_message,
                 data=errors,
             )
             return response

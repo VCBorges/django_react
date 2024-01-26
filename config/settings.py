@@ -69,9 +69,7 @@ DJANGO_MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-LOCAL_MIDDLEWARE = [
-    'app.core.middlewares.NoCacheStaticFilesMiddleware'
-]
+LOCAL_MIDDLEWARE = ['app.core.middlewares.NoCacheStaticFilesMiddleware']
 
 MIDDLEWARE = LOCAL_MIDDLEWARE + DJANGO_MIDDLEWARE
 
@@ -145,9 +143,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(FRONTEND_DIR, 'static')
-]
+STATICFILES_DIRS = [os.path.join(FRONTEND_DIR, 'static')]
 
 STATIC_ROOT = os.path.join(FRONTEND_DIR, 'dist')
 

@@ -21,7 +21,7 @@ class LoginTemplateView(LoggedOutTemplateView):
 
 class LogoutView(BaseLogoutView):
     next_page = reverse_lazy('login_template')
-    
+
 
 class LoginView(
     LoggedOutFormView,
@@ -56,5 +56,3 @@ class LoginView(
         return {
             'redirect_url': reverse(),
         }
-
-

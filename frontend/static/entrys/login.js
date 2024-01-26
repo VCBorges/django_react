@@ -1,15 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { useState, useReducer } from 'react';
+import { useState } from 'react';
 
-function BaseInput({ label, type, name, value, onChange }) {
-    return (
-        <div className="input-field">
-            <label htmlFor={name}>{label}</label>
-            <input type={type} id={name} name={name} value={value} onChange={onChange} />
-        </div>
-    );
-}
+import { BaseInput } from '../components/inputs/BaseInput.jsx';
 
 
 function SubmitButton() {
